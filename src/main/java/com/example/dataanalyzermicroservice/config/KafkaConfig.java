@@ -26,8 +26,7 @@ public class KafkaConfig {
 
         props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, servers);
 
-        props.put(ConsumerConfig.GROUP_ID_CONFIG,
-                "1");
+        props.put(ConsumerConfig.GROUP_ID_CONFIG, "1");
 
         props.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG,
                 org.apache.kafka.common.serialization.StringDeserializer.class);
@@ -35,8 +34,8 @@ public class KafkaConfig {
         props.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG,
                 org.apache.kafka.common.serialization.StringDeserializer.class);
 
-        props.put("spring.json.trusted.packages",
-                "*");
+        props.put("spring.json.trusted.packages", "*");
+
         return props;
     }
 

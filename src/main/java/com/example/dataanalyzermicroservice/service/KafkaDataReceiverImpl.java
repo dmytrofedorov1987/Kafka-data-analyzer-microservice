@@ -29,7 +29,8 @@ public class KafkaDataReceiverImpl implements KafkaDataReceiver {
         Gson gson = new GsonBuilder()
                 .registerTypeAdapter(LocalDateTime.class, localDateTimeDeserializer)
                 .create();
-        receiver.receive().subscribe(r -> {
+        receiver.receive()
+                .subscribe(r -> {
             Data data = gson.fromJson(r.value().toString(), Data.class);
             kafkaDataService.handle(data);
             r.receiverOffset().acknowledge();
